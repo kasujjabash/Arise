@@ -21,7 +21,7 @@ class IntroScreen extends StatelessWidget {
               //vertical images on the intro screen
               ClipRRect(
                 child: Image.asset(
-                  'lib/images/prayer_2x.jpg',
+                  'assets/images/prayer_2x.jpg',
                   // height: 400,
                   fit: BoxFit.cover,
                 ),

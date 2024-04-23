@@ -3,7 +3,8 @@ import 'package:arise/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../cmponets/my_bottom_navbar.dart';
-import '../screen/favourite_screen.dart';
+import '../screen/sermon_screen.dart';
+import '../screen/favourites_screen.dart';
 import '../screen/profile_screen.dart';
 
 class HomePage extends StatefulWidget {
@@ -26,8 +27,9 @@ class _HomePageState extends State<HomePage> {
   //List of pages to navigate
   final List screens = [
     const HomeScreen(),
+    const SermonsScreen(),
     const FavouritesScreen(),
-    const ProfileScreen()
+    // const ProfileScreen()
   ];
 
   @override

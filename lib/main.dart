@@ -1,8 +1,10 @@
+import 'package:arise/models/sermon_provider.dart';
 import 'package:arise/screen/intro_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(create: (context) =>SermonProvider(), child: const MyApp(),));
 }
 
 class MyApp extends StatelessWidget {

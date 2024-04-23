@@ -15,13 +15,14 @@ class BottomNavBar extends StatelessWidget {
             borderRadius: BorderRadius.circular(40),
             color: AppColors.secondaryColor),
         child: GNav(
+          activeColor: AppColors.background,
           onTabChange: onTabChange,
           color: AppColors.accentColor,
           iconSize: 25,
           gap: 10,
           tabs: const [
             GButton(
-              icon: Icons.home,
+              icon: Icons.home_outlined,
               text: 'Home',
             ),
             GButton(
@@ -29,8 +30,8 @@ class BottomNavBar extends StatelessWidget {
               text: 'Cermony',
             ),
             GButton(
-              icon: Icons.person,
-              text: 'Profile',
+              icon: Icons.favorite_border_outlined,
+              text: 'Favourites',
             ),
           ],
         ),
