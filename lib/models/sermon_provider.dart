@@ -35,6 +35,23 @@ class SermonProvider extends ChangeNotifier {
   int? _currentSermonIndex;
 
   /*
+  Audio player
+   */
+  //audio player
+  //duration
+  //constructor
+  //initially not playing
+  //play the sermon
+  //resum playing
+  //pause or play
+  //seek to a specific position in the current sermon
+  //play next sermon
+  //play previous sermon
+
+  //listen to durations
+  //dispose the audio play
+
+  /*
   G E T T E R S 
    */
 
@@ -45,7 +62,7 @@ class SermonProvider extends ChangeNotifier {
    */
 
   set currentSermonIndex(int? newIndex) {
-    // updated current sermon 
+    // updated current sermon
     _currentSermonIndex = newIndex;
     //update ui
     notifyListeners();
