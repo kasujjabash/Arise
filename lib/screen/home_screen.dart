@@ -2,6 +2,7 @@ import 'package:arise/Theme/app_colors.dart';
 import 'package:arise/cmponets/my_banner.dart';
 import 'package:arise/models/sermon_model.dart';
 import 'package:arise/models/sermon_provider.dart';
+import 'package:arise/pages/sermon_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,12 +23,16 @@ class _HomeScreenState extends State<HomeScreen> {
     //get sermon provider
     sermonProvider = Provider.of<SermonProvider>(context, listen: false);
   }
-  //go to the paticular sermon
-  void goToSermon(int sermonIndex){
-    //update current sermon index
 
-    //navigate to the sermon page - 15: 20
+  //go to the paticular sermon
+  void goToSermon(int sermonIndex) {
+    //update current sermon index
+    sermonProvider.currentSermonIndex = sermonIndex;
+    //navigate to the sermon page
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const SermonPage()));
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +58,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 5,
               ),
               Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

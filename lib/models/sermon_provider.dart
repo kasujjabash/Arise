@@ -43,4 +43,11 @@ class SermonProvider extends ChangeNotifier {
   /*
   S E T T E R S 
    */
+
+  set currentSermonIndex(int? newIndex) {
+    // updated current sermon 
+    _currentSermonIndex = newIndex;
+    //update ui
+    notifyListeners();
+  }
 }
