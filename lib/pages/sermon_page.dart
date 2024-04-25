@@ -50,36 +50,8 @@ class SermonPage extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.only(right: 25, left: 25, bottom: 25),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                //app bar
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // IconButton(
-                    //     onPressed: () {},
-                    //     icon: const Icon(
-                    //       Icons.arrow_back,
-                    //       color: AppColors.accentColor,
-                    //       size: 25,
-                    //     )), // tittl
-                    // const Text(
-                    //   "Sermon",
-                    //   style: TextStyle(
-                    //     color: AppColors.accentColor,
-                    //     fontSize: 20,
-                    //   ),
-                    // ),
-                    // //menue
-                    // IconButton(
-                    //     onPressed: () {},
-                    //     icon: const Icon(
-                    //       Icons.menu,
-                    //       color: AppColors.accentColor,
-                    //       size: 25,
-                    //     )),
-                  ],
-                ),
                 const SizedBox(
                   height: 30,
                 ),
@@ -89,36 +61,35 @@ class SermonPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset(
                     currentSermon.imageUrl,
-                    // height: 100,
+                    height: MediaQuery.of(context).size.height * .35,
                   ),
                 )),
                 const SizedBox(
                   height: 25,
                 ),
-                Row(
-                  children: [
-                    //sermon and description
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          currentSermon.title,
-                          style: const TextStyle(
-                            color: AppColors.accentColor,
-                            fontSize: 20,
-                          ),
-                        ),
-                        Text(
-                          currentSermon.description,
-                          style: const TextStyle(
-                            color: AppColors.secondaryColor,
-                            // fontSize: 20,
-                          ),
+                ListTile(
+                  title: RichText(
+                      text: TextSpan(
+                          style: const TextStyle(fontSize: 18),
+                          children: [
+                        TextSpan(
+                          text: currentSermon.title,
                         )
-                      ],
-                    ),
-                  ],
+                      ])),
+
+                  //Sermon descriptions
+                  subtitle: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    child: RichText(
+                        text: TextSpan(children: [
+                      TextSpan(
+                        text: currentSermon.description,
+                        style: const TextStyle(color: AppColors.secondaryColor),
+                      )
+                    ])),
+                  ),
                 ),
+
                 // sermon duration progress
                 Padding(
                   padding: const EdgeInsets.symmetric(

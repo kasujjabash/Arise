@@ -7,9 +7,10 @@ class SermonProvider extends ChangeNotifier {
   final List<Sermon> _sermon = [
     //sermon 1
     Sermon(
-        title: 'The power of positive confession',
-        description: 'Listen sermon from paster Jorum Mwesigwa',
-        dateTime: '4-04-24',
+        title: 'There is a season for war and for rest',
+        description:
+            'Psalms  144:1 Blessed be the LORD my strength, which teacheth my hands to war, and my fingers to fight',
+        dateTime: '6-04-24',
         audioPath: 'audio/Abel_Chungu.mp3',
         imageUrl: 'assets/images/prayer_2x.jpg'),
     //sermon 2
@@ -27,6 +28,57 @@ class SermonProvider extends ChangeNotifier {
         audioPath: 'audio/Abel_Chungu.mp3',
         imageUrl: 'assets/images/prayer_2x.jpg'),
     //sermon 4
+    Sermon(
+        title: 'The power of prayer',
+        description: 'Listen sermon from paster Jorum Mwesigwa',
+        dateTime: '23-04-24',
+        audioPath: 'audio/Abel_Chungu.mp3',
+        imageUrl: 'assets/images/prayer_2x.jpg'),
+    //sermon 5
+
+    Sermon(
+        title: 'The power of prayer',
+        description: 'Listen sermon from paster Jorum Mwesigwa',
+        dateTime: '23-04-24',
+        audioPath: 'audio/Abel_Chungu.mp3',
+        imageUrl: 'assets/images/prayer_2x.jpg'),
+    //sermon 6
+
+    Sermon(
+        title: 'The power of prayer',
+        description: 'Listen sermon from paster Jorum Mwesigwa',
+        dateTime: '23-04-24',
+        audioPath: 'audio/Abel_Chungu.mp3',
+        imageUrl: 'assets/images/prayer_2x.jpg'),
+
+    //sermon 7
+
+    Sermon(
+        title: 'The power of prayer',
+        description: 'Listen sermon from paster Jorum Mwesigwa',
+        dateTime: '23-04-24',
+        audioPath: 'audio/Abel_Chungu.mp3',
+        imageUrl: 'assets/images/prayer_2x.jpg'),
+    //sermon 8
+
+    Sermon(
+        title: 'The power of prayer',
+        description: 'Listen sermon from paster Jorum Mwesigwa',
+        dateTime: '23-04-24',
+        audioPath: 'audio/Abel_Chungu.mp3',
+        imageUrl: 'assets/images/prayer_2x.jpg'),
+
+    //sermon 9
+
+    Sermon(
+        title: 'The power of prayer',
+        description: 'Listen sermon from paster Jorum Mwesigwa',
+        dateTime: '23-04-24',
+        audioPath: 'audio/Abel_Chungu.mp3',
+        imageUrl: 'assets/images/prayer_2x.jpg'),
+
+    //sermon 10
+
     Sermon(
         title: 'The power of prayer',
         description: 'Listen sermon from paster Jorum Mwesigwa',

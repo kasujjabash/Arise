@@ -11,59 +11,66 @@ class HomeBanner extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(15),
       child: Container(
-        width: MediaQuery.of(context).size.width * .95,
+        width: MediaQuery.of(context).size.width * 0.95,
+        height: 200,
         padding: const EdgeInsets.all(15),
-        // height: 200,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: AppColors.secondaryColor),
+          borderRadius: BorderRadius.circular(20),
+          color: AppColors.secondaryColor,
+        ),
         child: Row(
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                //Banner text
-                const Text(
-                  'Arise Community Church\nSermon Center',
-                  style: TextStyle(
-                      color: AppColors.accentColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
-                //Banner text
-                const SizedBox(
-                  height: 5,
-                ),
-                const Text(
-                  'Your Spiritual Journey Begins.',
-                  style: TextStyle(
-                    color: AppColors.background,
+            Expanded(
+              flex: 2,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Banner text
+                 const Flexible(
+                    child: Text(
+                      'Arise Community Church\nSermon Center',
+                      style: TextStyle(
+                        color: AppColors.accentColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                //Icon
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
+                  // Banner text
+                  const SizedBox(height: 5),
+                 const Flexible(
+                    child: Text(
+                      'Your Spiritual Journey Begins.',
+                      style: TextStyle(
+                        color: AppColors.background,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  // Icon
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
                       color: AppColors.background,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: const Text(
-                    "Get started",
-                    style: TextStyle(color: AppColors.accentColor),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Text(
+                      "Get started",
+                      style: TextStyle(color: AppColors.accentColor),
+                    ),
                   ),
-                )
-              ],
+                ],
+              ),
             ),
-            const SizedBox(
-                // width: 2,
-                ),
-            Image.asset(
-              "assets/images/prayer_3.png",
-              height: 130,
-              fit: BoxFit.fitWidth,
-            )
+            const SizedBox(width: 10),
+            // Image
+            Flexible(
+              flex: 1,
+              child: Image.asset(
+                "assets/images/prayer_3.png",
+                fit: BoxFit.fitHeight,
+              ),
+            ),
           ],
         ),
       ),

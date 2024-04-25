@@ -91,7 +91,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
               Expanded(
                 child: ListView.builder(
-                    itemCount: sermon.length,
+                    itemCount: 5,
+                    //  sermon.length,
                     itemBuilder: (context, index) {
                       //get an individual sermon
                       final Sermon sermons = sermon[
@@ -99,15 +100,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       // return a list tile
                       return ListTile(
-                        title: Text(
-                          sermons.title,
-                          style: const TextStyle(color: AppColors.accentColor),
-                        ),
-                        subtitle: Text(
-                          sermons.description,
-                          style:
-                              const TextStyle(color: AppColors.secondaryColor),
-                        ),
+                        title: RichText(
+                            text: TextSpan(
+                                style: const TextStyle(fontSize: 18),
+                                children: [TextSpan(text: sermons.title)])),
+
+                        //Sermon descriptions
+                        subtitle: RichText(
+                            text: TextSpan(children: [
+                          TextSpan(
+                            text: sermons.description,
+                            style: const TextStyle(
+                                color: AppColors.secondaryColor),
+                          )
+                        ])),
                         leading: Image.asset(sermons.imageUrl),
                         onTap: () => goToSermon(index),
                       );
