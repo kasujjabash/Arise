@@ -11,6 +11,7 @@ class HomeBanner extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(15),
       child: Container(
+        width: MediaQuery.of(context).size.width * .95,
         padding: const EdgeInsets.all(15),
         // height: 200,
         decoration: BoxDecoration(
@@ -56,11 +57,12 @@ class HomeBanner extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              width: 5,
-            ),
+                // width: 2,
+                ),
             Image.asset(
               "assets/images/prayer_3.png",
               height: 130,
+              fit: BoxFit.fitWidth,
             )
           ],
         ),

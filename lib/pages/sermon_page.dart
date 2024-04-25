@@ -1,15 +1,21 @@
 import 'package:arise/Theme/app_colors.dart';
 import 'package:arise/cmponets/neu_box.dart';
-import 'package:arise/models/sermon_model.dart';
 import 'package:arise/models/sermon_provider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-// import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 class SermonPage extends StatelessWidget {
   const SermonPage({super.key});
+
+  //convert durations in min:sec
+
+  String formatTime(Duration duration) {
+    String twoDigitsSeconds =
+        duration.inSeconds.remainder(60).toString().padLeft(2, '0');
+    String formatedTime = "${duration.inMinutes}:$twoDigitsSeconds";
+
+    return formatedTime;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -114,8 +120,8 @@ class SermonPage extends StatelessWidget {
                   ],
                 ),
                 // sermon duration progress
-                const Padding(
-                  padding: EdgeInsets.symmetric(
+                Padding(
+                  padding: const EdgeInsets.symmetric(
                     vertical: 25,
                   ),
                   child: Column(
@@ -124,29 +130,31 @@ class SermonPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           //start time
-                          Text('0:00',
-                              style: TextStyle(color: AppColors.accentColor)),
+                          Text(formatTime(value.currentDuration),
+                              style: const TextStyle(
+                                  color: AppColors.accentColor)),
                           //shuffle
-                          Icon(
+                          const Icon(
                             Icons.shuffle,
                             color: AppColors.accentColor,
                           ),
                           //repeat
-                          Icon(
+                          const Icon(
                             Icons.replay,
                             color: AppColors.accentColor,
                           ),
 
                           //favourate icon
                           //heart icon to add to favourates
-                          Icon(
+                          const Icon(
                             Icons.favorite_outline,
                             color: AppColors.accentColor,
                           ),
                           //end time
                           Text(
-                            '0:00',
-                            style: TextStyle(color: AppColors.accentColor),
+                            formatTime(value.totalDuration),
+                            style:
+                                const TextStyle(color: AppColors.accentColor),
                           ),
                         ],
                       ),
@@ -156,11 +164,18 @@ class SermonPage extends StatelessWidget {
                 //slider,
                 //? progress bar
                 Slider(
-                    min: 0,
-                    max: 100,
-                    activeColor: AppColors.secondaryColor,
-                    value: 50,
-                    onChanged: (value) {}),
+                  min: 0,
+                  max: value.totalDuration.inSeconds.toDouble(),
+                  activeColor: AppColors.secondaryColor,
+                  value: value.currentDuration.inSeconds.toDouble(),
+                  onChanged: (double double) {
+                    //during when the slider is sliding aroung
+                  },
+                  onChangeEnd: (double double) {
+                    //sliding has finished, go to that position in sermon duration
+                    value.seek(Duration(seconds: double.toInt()));
+                  },
+                ),
 
                 //playback control
                 const SizedBox(
@@ -172,7 +187,7 @@ class SermonPage extends StatelessWidget {
                     //previous
                     Expanded(
                         child: GestureDetector(
-                            onTap: () {},
+                            onTap: value.playPreviousSermon,
                             child: const NeuBox(
                                 child: Icon(
                               Icons.skip_previous,
@@ -182,16 +197,16 @@ class SermonPage extends StatelessWidget {
                     Expanded(
                         flex: 2,
                         child: GestureDetector(
-                            onTap: () {},
-                            child: const NeuBox(
+                            onTap: value.pauseOrResume,
+                            child: NeuBox(
                                 child: Icon(
-                              Icons.play_arrow,
+                              value.isPlaying ? Icons.pause : Icons.play_arrow,
                               color: AppColors.accentColor,
                             )))),
                     // next
                     Expanded(
                         child: GestureDetector(
-                            onTap: () {},
+                            onTap: value.playNextSermon,
                             child: const NeuBox(
                                 child: Icon(
                               Icons.skip_next,
