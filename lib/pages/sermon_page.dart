@@ -1,6 +1,5 @@
 import 'package:arise/Theme/app_colors.dart';
 import 'package:arise/cmponets/neu_box.dart';
-import 'package:arise/models/sermon_model.dart';
 import 'package:arise/models/sermon_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

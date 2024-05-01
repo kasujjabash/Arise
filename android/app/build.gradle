@@ -26,6 +26,14 @@ if (flutterVersionName == null) {
 }
 
 android {
+
+    defaultConfig {
+       
+        multiDexEnabled true
+    }
+    
+    
+
     namespace "com.example.arise"
     compileSdk flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion

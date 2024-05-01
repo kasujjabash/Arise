@@ -40,18 +40,41 @@ class FavouritesScreen extends StatelessWidget {
                 // Get the current sermon
                 Sermon sermon = favoriteSermons[index];
                 // Display the sermon information
-                return GestureDetector(
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SermonPage(),
+                return Column(
+                  children: [
+                    GestureDetector(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SermonPage(),
+                        ),
+                      ),
+                      child: ListTile(
+                        leading: Image.asset(
+                          sermon.imageUrl,
+                          // height: 150,
+                        ),
+                        title: Text(
+                          sermon.title,
+                          style: const TextStyle(color: AppColors.accentColor),
+                        ),
+                        subtitle: Text(
+                          sermon.description,
+                          style:
+                              const TextStyle(color: AppColors.secondaryColor),
+                        ),
+                      ),
                     ),
-                  ),
-                  child: ListTile(
-                    title: Text(sermon.title),
-                    subtitle: Text(sermon.description),
-                    
-                  ),
+                    SizedBox(
+                      height: 40,
+                      child: //divider
+                          Divider(
+                        indent: 20,
+                        endIndent: 20,
+                        color: Colors.grey[700],
+                      ),
+                    ),
+                  ],
                 );
               },
             );
