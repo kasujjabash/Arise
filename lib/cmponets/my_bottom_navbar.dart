@@ -30,8 +30,8 @@ class BottomNavBar extends StatelessWidget {
               text: 'Sermony',
             ),
             GButton(
-              icon: Icons.podcasts,
-              text: 'Devotions',
+              icon: Icons.favorite_outline,
+              text: 'Favourates',
             ),
           ],
         ),

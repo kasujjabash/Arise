@@ -197,15 +197,28 @@ class SermonProvider extends ChangeNotifier {
   }
   //dispose the audio play
 
+  //list to hold the favourates
+  final List<Sermon> _favouratesSermon = [];
+  //function to add the sermon to favourates
+  void addSermonToFavourate(curretSermon) {
+    if (_currentSermonIndex != null &&
+        !_favouratesSermon.contains(_sermon[_currentSermonIndex!])) {
+      _favouratesSermon.add(_sermon[_currentSermonIndex!]);
+      notifyListeners();
+    }
+  }
+
   /*
   G E T T E R S 
    */
 
   List<Sermon> get sermon => _sermon;
+  List<Sermon> get favouratesSermon => _favouratesSermon;
   int? get currentSermonIndex => _currentSermonIndex;
   bool get isPlaying => _isPlaying;
   Duration get currentDuration => _currentDuration;
   Duration get totalDuration => _totalDuration;
+
   /*
   S E T T E R S 
    */

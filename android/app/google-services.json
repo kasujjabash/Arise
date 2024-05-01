@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "783468404328",
+    "project_id": "arise-9b280",
+    "storage_bucket": "arise-9b280.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783468404328:android:fb2d9e9b74ab36fb7565dd",
+        "android_client_info": {
+          "package_name": "com.example.arise"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOEYOqvUmQrMO7yXDZiAnAYbyc9_LdCjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

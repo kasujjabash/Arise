@@ -71,7 +71,7 @@
 // }
 
 import 'package:arise/Theme/app_colors.dart';
-import 'package:arise/cmponets/my_banner.dart';
+
 import 'package:arise/models/sermon_model.dart';
 import 'package:arise/models/sermon_provider.dart';
 import 'package:arise/pages/sermon_page.dart';

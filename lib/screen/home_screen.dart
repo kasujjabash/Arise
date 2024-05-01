@@ -6,6 +6,8 @@ import 'package:arise/pages/sermon_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'sermon_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -75,7 +77,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           // )
                           ),
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            //go to sermons
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SermonsScreen(),
+                              ),
+                            );
+                          },
                           child: const Text('See all',
                               style:
                                   //  GoogleFonts.libreBaskerville(
