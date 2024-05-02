@@ -21,24 +21,24 @@ class FavouritesScreen extends StatelessWidget {
       body: Consumer<SermonProvider>(
         builder: (context, value, child) {
           // Get the list of favorite sermons from SermonProvider
-          List<Sermon> favoriteSermons = value.favouratesSermon;
+          List<Sermon> favoritesSermons = value.favouratesSermon;
 
           // Check if there are any favorite sermons
-          if (favoriteSermons.isEmpty) {
+          if (favoritesSermons.isEmpty) {
             // Display a message if there are no favorite sermons
             return const Center(
               child: Text(
                 'No favorite sermons yet!',
-                style: TextStyle(color: AppColors.secondaryColor),
+                style: TextStyle(color: AppColors.secondaryColor, fontSize: 20),
               ),
             );
           } else {
             // Display the list of favorite sermons
             return ListView.builder(
-              itemCount: favoriteSermons.length,
+              itemCount: favoritesSermons.length,
               itemBuilder: (context, index) {
                 // Get the current sermon
-                Sermon sermon = favoriteSermons[index];
+                Sermon sermon = favoritesSermons[index];
                 // Display the sermon information
                 return Column(
                   children: [

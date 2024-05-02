@@ -98,7 +98,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   )),
               // lists of sermons
-
               Expanded(
                 child: ListView.builder(
                     itemCount: 5,
@@ -109,41 +108,29 @@ class _HomeScreenState extends State<HomeScreen> {
                           index]; // get individual sermon through the list of sermons
 
                       // return a list tile
-                      return Column(
-                        children: [
-                          ListTile(
-                            title: RichText(
-                                text: TextSpan(
-                                    style: const TextStyle(fontSize: 18),
-                                    children: [TextSpan(text: sermons.title)])),
+                      return Column(children: [
+                        ListTile(
+                          title: RichText(
+                              text: TextSpan(
+                                  style: const TextStyle(fontSize: 18),
+                                  children: [TextSpan(text: sermons.title)])),
 
-                            //Sermon descriptions
-                            subtitle: RichText(
-                                text: TextSpan(children: [
-                              TextSpan(
-                                text: sermons.description,
-                                style: const TextStyle(
-                                    color: AppColors.secondaryColor),
-                              )
-                            ])),
-                            leading: Image.asset(sermons.imageUrl),
-                            onTap: () => goToSermon(index),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          //sized box
-                          // SizedBox(
-                          //   height: 40,
-                          //   child: //divider
-                          //       Divider(
-                          //     indent: 20,
-                          //     endIndent: 20,
-                          //     color: Colors.grey[700],
-                          //   ),
-                          // ),
-                        ],
-                      );
+                          //Sermon descriptions
+                          subtitle: RichText(
+                              text: TextSpan(children: [
+                            TextSpan(
+                              text: sermons.description,
+                              style: const TextStyle(
+                                  color: AppColors.secondaryColor),
+                            )
+                          ])),
+                          leading: Image.asset(sermons.imageUrl),
+                          onTap: () => goToSermon(index),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                      ]);
                     }),
               )
             ],

@@ -11,7 +11,7 @@ class SermonProvider extends ChangeNotifier {
         description:
             'Psalms  144:1 Blessed be the LORD my strength, which teacheth my hands to war, and my fingers to fight',
         dateTime: '6-04-24',
-        audioPath: 'audio/Abel_Chungu.mp3',
+        audioPath: 'audio/RODAH-1.mp3',
         imageUrl: 'assets/images/prayer_2x.jpg'),
     //sermon 2
     Sermon(
@@ -37,7 +37,7 @@ class SermonProvider extends ChangeNotifier {
     //sermon 5
 
     Sermon(
-        title: 'The power of prayer',
+        title: 'Who is God?',
         description: 'Listen sermon from paster Jorum Mwesigwa',
         dateTime: '23-04-24',
         audioPath: 'audio/Abel_Chungu.mp3',
@@ -45,7 +45,7 @@ class SermonProvider extends ChangeNotifier {
     //sermon 6
 
     Sermon(
-        title: 'The power of prayer',
+        title: 'The revelation, full sermon',
         description: 'Listen sermon from paster Jorum Mwesigwa',
         dateTime: '23-04-24',
         audioPath: 'audio/Abel_Chungu.mp3',
@@ -54,7 +54,7 @@ class SermonProvider extends ChangeNotifier {
     //sermon 7
 
     Sermon(
-        title: 'The power of prayer',
+        title: 'How do you celebrate christimas',
         description: 'Listen sermon from paster Jorum Mwesigwa',
         dateTime: '23-04-24',
         audioPath: 'audio/Abel_Chungu.mp3',
@@ -62,7 +62,7 @@ class SermonProvider extends ChangeNotifier {
     //sermon 8
 
     Sermon(
-        title: 'The power of prayer',
+        title: 'The second comming',
         description: 'Listen sermon from paster Jorum Mwesigwa',
         dateTime: '23-04-24',
         audioPath: 'audio/Abel_Chungu.mp3',
@@ -71,7 +71,7 @@ class SermonProvider extends ChangeNotifier {
     //sermon 9
 
     Sermon(
-        title: 'The power of prayer',
+        title: 'Take that first step of faith',
         description: 'Listen sermon from paster Jorum Mwesigwa',
         dateTime: '23-04-24',
         audioPath: 'audio/Abel_Chungu.mp3',
@@ -80,7 +80,7 @@ class SermonProvider extends ChangeNotifier {
     //sermon 10
 
     Sermon(
-        title: 'The power of prayer',
+        title: 'Worship can open closed doors',
         description: 'Listen sermon from paster Jorum Mwesigwa',
         dateTime: '23-04-24',
         audioPath: 'audio/Abel_Chungu.mp3',
@@ -88,7 +88,8 @@ class SermonProvider extends ChangeNotifier {
   ];
   //current sermony
 
-  int? _currentSermonIndex;
+  int?
+      _currentSermonIndex; //!I use this to access the current index of the sermon
 
   /*
   Audio player

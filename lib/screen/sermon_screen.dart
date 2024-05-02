@@ -96,6 +96,8 @@ class _SermonsScreenState extends State<SermonsScreen> {
     sermonProvider = Provider.of<SermonProvider>(context, listen: false);
   }
 
+ 
+
   //go to the paticular sermon
   void goToSermon(int sermonIndex) {
     //update current sermon index

@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class SermonPage extends StatelessWidget {
-  const SermonPage({super.key,});
+  const SermonPage({
+    super.key,
+  });
 
   //convert durations in min:sec
 
@@ -122,11 +124,19 @@ class SermonPage extends StatelessWidget {
                               value.addSermonToFavourate(
                                   currentSermon); // Call addToFavorites function with the current sermon
                             },
-                            icon: const Icon(
+                            
+
+                            icon: Icon(
                               Icons.favorite_outline,
-                              color: AppColors.accentColor,
+                              
+                              color: value.favouratesSermon
+                                      .contains(currentSermon)
+                                  ? Colors
+                                      .red // Change color if sermon is in favorites
+                                  : AppColors.accentColor,
                             ),
                           ),
+                          
                           //end time
                           Text(
                             formatTime(value.totalDuration),

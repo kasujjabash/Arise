@@ -109,10 +109,17 @@ class IntroScreen extends StatelessWidget {
 
                 //Let's go button
                 MyButton(
-                  onTap: () => Navigator.push(
+                  onTap: () {
+                    //pop the page
+                    Navigator.pop(context);
+                    //Go to the Homepage
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const HomePage())),
+                        builder: (context) => const HomePage(),
+                      ),
+                    );
+                  },
                   text: "Get started",
                 )
               ],
