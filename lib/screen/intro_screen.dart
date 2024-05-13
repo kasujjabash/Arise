@@ -75,7 +75,7 @@ class IntroScreen extends StatelessWidget {
                   height: 40,
                 ),
                 //App name
-                const Text('Arise Community Church',
+                const Text('Arise city altar church',
                     style:
                         //  GoogleFonts.libreBaskerville(
                         // textStyle:
