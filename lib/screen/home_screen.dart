@@ -6,6 +6,7 @@ import 'package:arise/pages/sermon_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../cmponets/my_tab_bar.dart';
 import 'sermon_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -41,10 +42,20 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: AppColors.background,
         appBar: AppBar(
           backgroundColor: AppColors.background,
-          leading: const Icon(
-            Icons.person,
-            size: 30,
-            color: AppColors.accentColor,
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const MyTabBarView(),
+                ),
+              );
+            },
+            child: const Icon(
+              Icons.person,
+              size: 30,
+              color: AppColors.accentColor,
+            ),
           ),
         ),
         body: Consumer<SermonProvider>(builder: (context, value, child) {
@@ -60,43 +71,47 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 5,
               ),
               Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text('Latest Sermons',
-                          style:
-                              //  GoogleFonts.libreBaskerville(
-                              // textStyle:
-                              TextStyle(
-                                  color: AppColors.accentColor,
-                                  fontWeight: FontWeight.bold,
-                                  // letterSpacing: 1,
-                                  fontSize: 20)
-                          // )
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text('Latest Sermons',
+                        style:
+                            //  GoogleFonts.libreBaskerville(
+                            // textStyle:
+                            TextStyle(
+                                color: AppColors.accentColor,
+                                fontWeight: FontWeight.bold,
+                                // letterSpacing: 1,
+                                fontSize: 20)
+                        // )
+                        ),
+                    TextButton(
+                      onPressed: () {
+                        //go to sermons
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SermonsScreen(),
                           ),
-                      TextButton(
-                          onPressed: () {
-                            //go to sermons
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SermonsScreen(),
-                              ),
-                            );
-                          },
-                          child: const Text('See all',
-                              style:
-                                  //  GoogleFonts.libreBaskerville(
-                                  // textStyle:
-                                  TextStyle(
-                                      color: AppColors.secondaryColor,
+                        );
+                      },
+                      child: const Text(
+                        'See all',
+                        style:
+                            //  GoogleFonts.libreBaskerville(
+                            // textStyle:
+                            TextStyle(
+                                color: AppColors.secondaryColor,
 
-                                      // letterSpacing: 1,
-                                      fontSize: 15)))
-                    ],
-                  )),
+                                // letterSpacing: 1,
+                                fontSize: 15),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               // lists of sermons
               Expanded(
                 child: ListView.builder(

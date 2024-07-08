@@ -1,77 +1,4 @@
-// import 'package:arise/Theme/app_colors.dart';
-// import 'package:arise/models/sermon_provider.dart';
-// import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-
-// import '../models/sermon_model.dart';
-
-// class SermonsScreen extends StatefulWidget {
-//   const SermonsScreen({super.key});
-
-//   @override
-//   State<SermonsScreen> createState() => _SermonsScreenState();
-// }
-
-// class _SermonsScreenState extends State<SermonsScreen> {
-//    //get the sermon provider
-//   late final dynamic sermonProvider;
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: AppColors.background,
-//       appBar: AppBar(
-//         foregroundColor: AppColors.accentColor,
-//         backgroundColor: AppColors.background,
-//         title: const Text('Sermon screen'),
-//       ),
-//       body: Consumer<SermonProvider>  (builder: (context, value, child) {
-//         return ListView.builder(
-//         // final List<Sermon> sermon = value.sermon;
-//         // itemCount: ,
-//         itemBuilder: (context, index) {
-//           final List<Sermon> sermon = value.sermon;
-//           final Sermon sermons = sermon[
-//                           index];
-//           return Column(
-//             children: [
-//               Padding(
-//                 padding:
-//                     const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-//                 child: Container(
-//                   decoration: const BoxDecoration(),
-//                   child: ListTile(
-//                     title: RichText(
-//                         text: const TextSpan(
-//                             style: TextStyle(fontSize: 20),
-//                             children: [TextSpan(text: sermon.title)])),
-//                     subtitle: Padding(
-//                       padding: const EdgeInsets.only(top: 8),
-//                       child: RichText(
-//                           text: const TextSpan(
-//                               children: [TextSpan(text: 'Title goes here')])),
-//                     ),
-//                     leading: Image.asset(
-//                       'assets/images/prayer_2x.jpg',
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//               const Divider(
-//                 indent: 15,
-//                 endIndent: 15,
-//                 color: AppColors.secondaryColor,
-//               )
-//             ],
-//           );
-//         },
-//       );}
-// ,)
-// );
-//   }
-// }
-
 import 'package:arise/Theme/app_colors.dart';
-
 import 'package:arise/models/sermon_model.dart';
 import 'package:arise/models/sermon_provider.dart';
 import 'package:arise/pages/sermon_page.dart';
@@ -111,10 +38,19 @@ class _SermonsScreenState extends State<SermonsScreen> {
         backgroundColor: AppColors.background,
         appBar: AppBar(
           backgroundColor: AppColors.background,
-          leading: const Icon(
-            Icons.person,
-            size: 30,
-            color: AppColors.accentColor,
+          foregroundColor: Colors.white,
+          centerTitle: true,
+          title: const Text(
+            'All sermons',
+            style:
+                //  GoogleFonts.libreBaskerville(
+                // textStyle:
+                TextStyle(
+                    color: AppColors.accentColor,
+                    fontWeight: FontWeight.bold,
+                    // letterSpacing: 1,
+                    fontSize: 20),
+            // )
           ),
         ),
         body: Consumer<SermonProvider>(builder: (context, value, child) {
@@ -128,23 +64,8 @@ class _SermonsScreenState extends State<SermonsScreen> {
                 height: 5,
               ),
               const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('All sermons',
-                          style:
-                              //  GoogleFonts.libreBaskerville(
-                              // textStyle:
-                              TextStyle(
-                                  color: AppColors.accentColor,
-                                  fontWeight: FontWeight.bold,
-                                  // letterSpacing: 1,
-                                  fontSize: 20)
-                          // )
-                          ),
-                    ],
-                  )),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              ),
               // lists of sermons
 
               Expanded(

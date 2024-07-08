@@ -33,7 +33,7 @@ class SermonPage extends StatelessWidget {
           foregroundColor: AppColors.accentColor,
           backgroundColor: AppColors.background,
           title: const Text(
-            'Sermons',
+            'Sermon player',
             style: TextStyle(
               color: AppColors.accentColor,
               fontSize: 20,
@@ -43,7 +43,7 @@ class SermonPage extends StatelessWidget {
           actions: const [
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 25),
-              child: Icon(Icons.menu),
+              child: Icon(Icons.share),
             )
           ],
         ),
