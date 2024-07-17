@@ -3,6 +3,7 @@ import 'package:arise/pages/home_page.dart';
 // import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
+import '../cmponets/get_in_touch_tile.dart';
 import '../cmponets/my_button.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -10,123 +11,98 @@ class IntroScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.background,
-      body: Column(
-        children: [
-          //hero designed images section
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              //vertical images on the intro screen
-              ClipRRect(
-                child: Image.asset(
-                  'assets/images/prayer_2x.jpg',
-                  // height: 400,
-                  fit: BoxFit.cover,
-                ),
-              ),
-
-              // ClipRRect(
-              //   borderRadius: BorderRadius.circular(60),
-              //   child: Image.asset(
-              //     'lib/images/prayer_3.jpg',
-              //     height: 200,
-              //   ),
-              // ),
-              // const SizedBox(
-              //   height: 20,
-              // ),
-              // ClipRRect(
-              //   borderRadius: BorderRadius.circular(60),
-              //   child: Image.asset(
-              //     'lib/images/prayer_1.jpg',
-              //     height: 200,
-              //   ),
-              // )
-            ],
-          ),
-          // const SizedBox(
-          //   width: 20,
-          // ),
-          // ClipRRect(
-          //   borderRadius: BorderRadius.circular(70),
-          //   child: Image.asset(
-          //     'lib/images/prayer_2.jpg',
-          //     width: 190,
-          //     height: 400,
-          //     fit: BoxFit.cover,
-          //   ),
-          // ),
-
-          // Text('Community Church',
-          //     style: GoogleFonts.libreBaskerville(
-          //         textStyle: const TextStyle(
-          //             color: AppColors.accentColor,
-          //             fontWeight: FontWeight.bold,
-          //             fontSize: 30))),
-
-          //description text
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              
+    return GestureDetector(
+      child: Scaffold(
+        backgroundColor: AppColors.background,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //hero designed images section
+            Column(
               children: [
-                const SizedBox(
-                  height: 40,
-                ),
-                //App name
-                const Text('Arise city altar church',
-                    style:
-                        //  GoogleFonts.libreBaskerville(
-                        // textStyle:
-                        TextStyle(
-                            color: AppColors.secondaryColor,
-                            fontWeight: FontWeight.bold,
-                            // letterSpacing: 1,
-                            fontSize: 35)
-                    // )
-                    ),
-                const SizedBox(
-                  height: 25,
-                ),
-                const Center(
-                  child: Text(
-                    'Listen closely as Arise brings together hearts in worship and fellowship.',
-                    style:
-
-                        //  GoogleFonts.lato(
-                        // textStyle: /
-                        TextStyle(
-                            color: AppColors.accentColor,
-                            fontSize: 18,
-                            letterSpacing: .5),
+                //vertical images on the intro screen
+                ClipRRect(
+                  // borderRadius:
+                  //     BorderRadius.only(bottomLeft: Radius.circular(300)),
+                  child: Image.asset(
+                    'assets/images/prayer_2x.jpg',
+                    // height: 400,
+                    fit: BoxFit.cover,
                   ),
                 ),
-                // ),
+
+                //Intro text colum
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Intro text
+                      SizedBox(
+                        height: 40,
+                      ),
+                      //App name
+                      Text('Arise city altar church',
+                          style:
+                              //  GoogleFonts.libreBaskerville(
+                              // textStyle:
+                              TextStyle(
+                                  color: AppColors.secondaryColor,
+                                  fontWeight: FontWeight.bold,
+                                  // letterSpacing: 1,
+                                  fontSize: 35)
+                          // )
+                          ),
+                      SizedBox(
+                        height: 25,
+                      ),
+                      Center(
+                        child: Text(
+                          '''Listen closely as Arise brings together hearts in worship and fellowship.''',
+                          style:
+
+                              //  GoogleFonts.lato(
+                              // textStyle: /
+                              TextStyle(
+                                  color: AppColors.accentColor,
+                                  fontSize: 20,
+                                  letterSpacing: .5),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 const SizedBox(
                   height: 30,
                 ),
-
-                //Let's go button
-                MyButton(
-                  onTap: () {
-                    //pop the page
-                    Navigator.pop(context);
-                    //Go to the Homepage
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(),
-                      ),
-                    );
-                  },
-                  text: "Get started",
-                )
               ],
             ),
-          )
-        ],
+            //button
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+              child: Column(
+                children: [
+                  //Let's go button
+                  MyButton(
+                    onTap: () {
+                      //pop the page
+                      Navigator.pop(context);
+                      //Go to the Homepage
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomePage(),
+                        ),
+                      );
+                    },
+                    text: "Get started",
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

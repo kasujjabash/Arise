@@ -73,7 +73,7 @@ class SermonPage extends StatelessWidget {
                   ListTile(
                     title: RichText(
                         text: TextSpan(
-                            style: const TextStyle(fontSize: 18),
+                            style: const TextStyle(fontSize: 20),
                             children: [
                           TextSpan(
                             text: currentSermon.title,
@@ -82,13 +82,15 @@ class SermonPage extends StatelessWidget {
 
                     //Sermon descriptions
                     subtitle: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 5),
+                      padding: const EdgeInsets.symmetric(vertical: 15),
                       child: RichText(
                           text: TextSpan(children: [
                         TextSpan(
                           text: currentSermon.description,
-                          style:
-                              const TextStyle(color: AppColors.secondaryColor),
+                          style: const TextStyle(
+                            color: AppColors.secondaryColor,
+                            fontSize: 18,
+                          ),
                         )
                       ])),
                     ),

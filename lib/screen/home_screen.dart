@@ -1,5 +1,6 @@
 import 'package:arise/Theme/app_colors.dart';
 import 'package:arise/cmponets/my_banner.dart';
+import 'package:arise/cmponets/my_drawer.dart';
 import 'package:arise/models/sermon_model.dart';
 import 'package:arise/models/sermon_provider.dart';
 import 'package:arise/pages/sermon_page.dart';
@@ -7,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../cmponets/my_tab_bar.dart';
-import 'sermon_screen.dart';
+import 'all_sermon_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -33,7 +34,11 @@ class _HomeScreenState extends State<HomeScreen> {
     sermonProvider.currentSermonIndex = sermonIndex;
     //navigate to the sermon page
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const SermonPage()));
+      context,
+      MaterialPageRoute(
+        builder: (context) => const SermonPage(),
+      ),
+    );
   }
 
   @override
@@ -41,23 +46,29 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         backgroundColor: AppColors.background,
         appBar: AppBar(
+          foregroundColor: Colors.white,
           backgroundColor: AppColors.background,
-          leading: GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const MyTabBarView(),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MyTabBarView(),
+                    ),
+                  );
+                },
+                child: const Icon(
+                  Icons.person,
+                  size: 30,
                 ),
-              );
-            },
-            child: const Icon(
-              Icons.person,
-              size: 30,
-              color: AppColors.accentColor,
+              ),
             ),
-          ),
+          ],
         ),
+        drawer: const MyDrawer(),
         body: Consumer<SermonProvider>(builder: (context, value, child) {
           final List<Sermon> sermon = value.sermon;
 
@@ -93,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const SermonsScreen(),
+                            builder: (context) => const AllSermonsScreen(),
                           ),
                         );
                       },
@@ -126,19 +137,27 @@ class _HomeScreenState extends State<HomeScreen> {
                       return Column(children: [
                         ListTile(
                           title: RichText(
-                              text: TextSpan(
-                                  style: const TextStyle(fontSize: 18),
-                                  children: [TextSpan(text: sermons.title)])),
-
-                          //Sermon descriptions
-                          subtitle: RichText(
                               text: TextSpan(children: [
                             TextSpan(
-                              text: sermons.description,
-                              style: const TextStyle(
-                                  color: AppColors.secondaryColor),
+                              text: sermons.title,
+                              style: const TextStyle(fontSize: 20),
                             )
                           ])),
+
+                          //Sermon descriptions
+                          subtitle: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 15),
+                            child: RichText(
+                                text: TextSpan(children: [
+                              TextSpan(
+                                text: sermons.description,
+                                style: const TextStyle(
+                                  color: AppColors.secondaryColor,
+                                  fontSize: 18,
+                                ),
+                              )
+                            ])),
+                          ),
                           leading: Image.asset(sermons.imageUrl),
                           onTap: () => goToSermon(index),
                         ),

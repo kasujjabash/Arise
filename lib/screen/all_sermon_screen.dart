@@ -5,14 +5,14 @@ import 'package:arise/pages/sermon_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SermonsScreen extends StatefulWidget {
-  const SermonsScreen({super.key});
+class AllSermonsScreen extends StatefulWidget {
+  const AllSermonsScreen({super.key});
 
   @override
-  State<SermonsScreen> createState() => _SermonsScreenState();
+  State<AllSermonsScreen> createState() => _AllSermonsScreenState();
 }
 
-class _SermonsScreenState extends State<SermonsScreen> {
+class _AllSermonsScreenState extends State<AllSermonsScreen> {
   //get the sermon provider
   late final dynamic sermonProvider;
 
@@ -79,20 +79,37 @@ class _SermonsScreenState extends State<SermonsScreen> {
                       // return a list tile
                       return ListTile(
                         title: RichText(
-                            text: TextSpan(
-                                style: const TextStyle(fontSize: 18),
-                                children: [TextSpan(text: sermons.title)])),
+                          text: TextSpan(
+                            // style: const TextStyle(fontSize: 18),
+                            children: [
+                              TextSpan(
+                                text: sermons.title,
+                                style: const TextStyle(fontSize: 20),
+                              ),
+                            ],
+                          ),
+                        ),
 
                         //Sermon descriptions
-                        subtitle: RichText(
-                            text: TextSpan(children: [
-                          TextSpan(
-                            text: sermons.description,
-                            style: const TextStyle(
-                                color: AppColors.secondaryColor),
-                          )
-                        ])),
-                        leading: Image.asset(sermons.imageUrl),
+                        subtitle: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: sermons.description,
+                                  style: const TextStyle(
+                                      color: AppColors.secondaryColor,
+                                      fontSize: 18),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        leading: Image.asset(
+                          sermons.imageUrl,
+                          // height: 300,
+                        ),
                         onTap: () => goToSermon(index),
                       );
                     }),

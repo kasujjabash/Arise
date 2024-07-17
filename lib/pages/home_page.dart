@@ -3,7 +3,7 @@ import 'package:arise/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../cmponets/my_bottom_navbar.dart';
-import '../screen/sermon_screen.dart';
+import '../screen/all_sermon_screen.dart';
 import '../screen/favourites_screen.dart';
 import '../cmponets/my_tab_bar.dart';
 
@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
   //List of pages to navigate
   final List screens = [
     const HomeScreen(),
-    const SermonsScreen(),
+    const AllSermonsScreen(),
     const FavouritesScreen(),
     // const ProfileScreen()
   ];
