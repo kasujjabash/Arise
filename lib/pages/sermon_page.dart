@@ -72,13 +72,15 @@ class SermonPage extends StatelessWidget {
                   ),
                   ListTile(
                     title: RichText(
-                        text: TextSpan(
-                            style: const TextStyle(fontSize: 20),
-                            children: [
+                      text: TextSpan(
+                        style: const TextStyle(fontSize: 20),
+                        children: [
                           TextSpan(
                             text: currentSermon.title,
                           )
-                        ])),
+                        ],
+                      ),
+                    ),
 
                     //Sermon descriptions
                     subtitle: Padding(
@@ -174,13 +176,16 @@ class SermonPage extends StatelessWidget {
                     children: [
                       //previous
                       Expanded(
-                          child: GestureDetector(
-                              onTap: value.playPreviousSermon,
-                              child: const NeuBox(
-                                  child: Icon(
-                                Icons.skip_previous,
-                                color: AppColors.accentColor,
-                              )))),
+                        child: GestureDetector(
+                          onTap: value.playPreviousSermon,
+                          child: const NeuBox(
+                            child: Icon(
+                              Icons.skip_previous,
+                              color: AppColors.accentColor,
+                            ),
+                          ),
+                        ),
+                      ),
                       //play/ pause
                       Expanded(
                           flex: 2,

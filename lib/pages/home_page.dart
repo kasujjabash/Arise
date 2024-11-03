@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../cmponets/my_bottom_navbar.dart';
 import '../screen/all_sermon_screen.dart';
 import '../screen/favourites_screen.dart';
-import '../cmponets/my_tab_bar.dart';
+// import '../cmponets/my_tab_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
     const HomeScreen(),
     const AllSermonsScreen(),
     const FavouritesScreen(),
-    // const ProfileScreen()
+    // const ProfileScreen()    
   ];
 
   @override

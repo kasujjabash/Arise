@@ -20,18 +20,19 @@ class MyProfile extends StatelessWidget {
             ),
           ),
           TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>  SignIn(),
-                  ),
-                );
-              },
-              child: const Text(
-                "Sign in",
-                style: TextStyle(color: AppColors.secondaryColor, fontSize: 18),
-              ))
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SignIn(),
+                ),
+              );
+            },
+            child: const Text(
+              "Sign in",
+              style: TextStyle(color: AppColors.secondaryColor, fontSize: 18),
+            ),
+          )
         ],
       ),
     );

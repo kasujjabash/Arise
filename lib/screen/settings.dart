@@ -9,7 +9,7 @@ import 'about_our_church.dart';
 class Settings extends StatelessWidget {
   Settings({super.key});
 
-  final Uri toLaunch = Uri.parse('https://linktr.ee/bashirkasujja');
+  final Uri toLaunch = Uri.parse('https://bashir-kasujja.onrender.com/');
 
   Future<void> _launchInBrowser(Uri url) async {
     if (!await launchUrl(
@@ -68,7 +68,7 @@ class Settings extends StatelessWidget {
             child: MySettingsTile(
               onTap: () => _launchInBrowser(toLaunch),
               leading: Icons.code,
-              title: "Developer's contacts",
+              title: "Contact the developer",
               tailing: Icons.arrow_forward_ios,
             ),
           ),

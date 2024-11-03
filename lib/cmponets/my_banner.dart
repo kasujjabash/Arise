@@ -26,7 +26,7 @@ class HomeBanner extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Banner text
-                 const Flexible(
+                  const Flexible(
                     child: Text(
                       'Arise Community Church\nSermon Center',
                       style: TextStyle(
@@ -38,7 +38,7 @@ class HomeBanner extends StatelessWidget {
                   ),
                   // Banner text
                   const SizedBox(height: 5),
-                 const Flexible(
+                  const Flexible(
                     child: Text(
                       'Your Spiritual Journey Begins.',
                       style: TextStyle(
@@ -55,7 +55,7 @@ class HomeBanner extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: const Text(
-                      "Get started",
+                      "Send prayer request",
                       style: TextStyle(color: AppColors.accentColor),
                     ),
                   ),
