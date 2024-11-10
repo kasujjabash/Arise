@@ -1,13 +1,22 @@
-import 'package:arise/models/sermon_provider.dart';
+import 'package:arise/providers/sermon_provider.dart';
 import 'package:arise/screen/intro_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'providers/video_provider.dart';
+
 void main() {
-  runApp(ChangeNotifierProvider(
-    create: (context) => SermonProvider(),
-    child: const MyApp(),
-  ));
+  runApp(
+    // ChangeNotifierProvider(
+    // create: (context) => SermonProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => SermonProvider(),),
+        ChangeNotifierProvider(create: (context)=>VideoProvider())
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

@@ -1,90 +1,110 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'sermon_model.dart';
+import '../models/sermon_module.dart';
 
 class SermonProvider extends ChangeNotifier {
 //lsits of sermons
   final List<Sermon> _sermon = [
     //sermon 1
     Sermon(
-        title: 'There is a season for war and for rest',
-        description:
-            'Psalms  144:1 Blessed be the LORD my strength, which teacheth my hands to war, and my fingers to fight',
-        dateTime: '6-04-24',
-        audioPath: 'audio/RODAH-1.mp3',
-        imageUrl: 'assets/images/prayer_2x.jpg'),
+      title: 'There is a season for war and for rest',
+      description:
+          'Psalms  144:1 Blessed be the LORD my strength, which teacheth my hands to war, and my fingers to fight',
+      dateTime: '6-04-24',
+      audioPath: 'audio/RODAH-1.mp3',
+      imageUrl: 'assets/images/prayer_2x.jpg',
+      preacher: 'Apostle Hakiza Isaac',
+    ),
     //sermon 2
     Sermon(
-        title: 'Going to heaven',
-        description: 'Listen sermon from paster Jorum Mwesigwa',
-        dateTime: '6-04-24',
-        audioPath: 'audio/Abel_Chungu.mp3',
-        imageUrl: 'assets/images/prayer_2x.jpg'),
+      title: 'Going to heaven',
+      description: 'Listen sermon from paster Jorum Mwesigwa',
+      dateTime: '6-04-24',
+      audioPath: 'audio/Abel_Chungu.mp3',
+      preacher: 'Apostle Hakiza Isaac',
+      imageUrl: 'assets/images/prayer_2x.jpg',
+    ),
     //sermon 3
     Sermon(
-        title: 'Growing in christ,',
-        description: 'Listen sermon from paster Jorum Mwesigwa',
-        dateTime: '20-04-24',
-        audioPath: 'audio/Abel_Chungu.mp3',
-        imageUrl: 'assets/images/prayer_2x.jpg'),
+      title: 'Growing in christ,',
+      description: 'Listen sermon from paster Jorum Mwesigwa',
+      dateTime: '20-04-24',
+      audioPath: 'audio/Abel_Chungu.mp3',
+      preacher: 'Apostle Hakiza Isaac',
+      imageUrl: 'assets/images/prayer_2x.jpg',
+    ),
     //sermon 4
     Sermon(
-        title: 'The power of prayer',
-        description: 'Listen sermon from paster Jorum Mwesigwa',
-        dateTime: '23-04-24',
-        audioPath: 'audio/Abel_Chungu.mp3',
-        imageUrl: 'assets/images/prayer_2x.jpg'),
+      title: 'The power of prayer',
+      description: 'Listen sermon from paster Jorum Mwesigwa',
+      dateTime: '23-04-24',
+      audioPath: 'audio/Abel_Chungu.mp3',
+      preacher: 'Apostle Hakiza Isaac',
+      imageUrl: 'assets/images/prayer_2x.jpg',
+    ),
     //sermon 5
 
     Sermon(
-        title: 'Who is God?',
-        description: 'Listen sermon from paster Jorum Mwesigwa',
-        dateTime: '23-04-24',
-        audioPath: 'audio/Abel_Chungu.mp3',
-        imageUrl: 'assets/images/prayer_2x.jpg'),
+      title: 'Who is God?',
+      description: 'Listen sermon from paster Jorum Mwesigwa',
+      dateTime: '23-04-24',
+      audioPath: 'audio/Abel_Chungu.mp3',
+      preacher: 'Apostle Hakiza Isaac',
+      imageUrl: 'assets/images/prayer_2x.jpg',
+    ),
     //sermon 6
 
     Sermon(
-        title: 'The revelation, full sermon',
-        description: 'Listen sermon from paster Jorum Mwesigwa',
-        dateTime: '23-04-24',
-        audioPath: 'audio/Abel_Chungu.mp3',
-        imageUrl: 'assets/images/prayer_2x.jpg'),
+      title: 'The revelation, full sermon',
+      description: 'Listen sermon from paster Jorum Mwesigwa',
+      dateTime: '23-04-24',
+      audioPath: 'audio/Abel_Chungu.mp3',
+      preacher: 'Apostle Hakiza Isaac',
+      imageUrl: 'assets/images/prayer_2x.jpg',
+    ),
 
     //sermon 7
 
     Sermon(
-        title: 'How do you celebrate christimas',
-        description: 'Listen sermon from paster Jorum Mwesigwa',
-        dateTime: '23-04-24',
-        audioPath: 'audio/Abel_Chungu.mp3',
-        imageUrl: 'assets/images/prayer_2x.jpg'),
+      title: 'How do you celebrate christimas',
+      description: 'Listen sermon from paster Jorum Mwesigwa',
+      dateTime: '23-04-24',
+      audioPath: 'audio/Abel_Chungu.mp3',
+      preacher: 'Apostle Hakiza Isaac',
+      imageUrl: 'assets/images/prayer_2x.jpg',
+    ),
     //sermon 8
 
     Sermon(
-        title: 'The second comming',
-        description: 'Listen sermon from paster Jorum Mwesigwa',
-        dateTime: '23-04-24',
-        audioPath: 'audio/Abel_Chungu.mp3',
-        imageUrl: 'assets/images/prayer_2x.jpg'),
+      title: 'The second comming',
+      description: 'Listen sermon from paster Jorum Mwesigwa',
+      dateTime: '23-04-24',
+      audioPath: 'audio/Abel_Chungu.mp3',
+      preacher: 'Apostle Hakiza Isaac',
+      imageUrl: 'assets/images/prayer_2x.jpg',
+    ),
 
     //sermon 9
 
     Sermon(
-        title: 'Take that first step of faith',
-        description: 'Listen sermon from paster Jorum Mwesigwa',
-        dateTime: '23-04-24',
-        audioPath: 'audio/Abel_Chungu.mp3',
-        imageUrl: 'assets/images/prayer_2x.jpg'),
+      title: 'Take that first step of faith',
+      description: 'Listen sermon from paster Jorum Mwesigwa',
+      dateTime: '23-04-24',
+      audioPath: 'audio/Abel_Chungu.mp3',
+      preacher: 'Apostle Hakiza Isaac',
+      imageUrl: 'assets/images/prayer_2x.jpg',
+    ),
 
     //sermon 10
 
     Sermon(
-        title: 'Worship can open closed doors',
-        description: 'Listen sermon from paster Jorum Mwesigwa',
-        dateTime: '23-04-24',
-        audioPath: 'audio/Abel_Chungu.mp3',
-        imageUrl: 'assets/images/prayer_2x.jpg'),
+      title: 'Worship can open closed doors',
+      description: 'Listen sermon from paster Jorum Mwesigwa',
+      dateTime: '23-04-24',
+      audioPath: 'audio/Abel_Chungu.mp3',
+      preacher: 'Apostle Hakiza Isaac',
+      imageUrl: 'assets/images/prayer_2x.jpg',
+    ),
   ];
   //current sermony
 

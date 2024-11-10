@@ -1,8 +1,8 @@
 import 'package:arise/Theme/app_colors.dart';
-import 'package:arise/cmponets/sermons_tile.dart';
-import 'package:arise/models/sermon_model.dart';
-import 'package:arise/models/sermon_provider.dart';
-import 'package:arise/pages/sermon_page.dart';
+import 'package:arise/cmponets/app_tiles/sermons_tile.dart';
+import 'package:arise/models/sermon_module.dart';
+import 'package:arise/providers/sermon_provider.dart';
+import 'package:arise/screen/sermon_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -49,32 +49,37 @@ class AllSermonsScreen extends StatelessWidget {
                 style: TextStyle(color: Colors.white, fontSize: 16),
               ),
             )
-          : Column(
-              children: [
-                const SizedBox(height: 5),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                ),
-                Expanded(
-                  child: GridView.builder(
-                    itemCount: sermons.length, // Set itemCount to avoid errors
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 10,
-                      childAspectRatio: 0.75, // Adjust ratio to fit layout
-                    ),
-                    itemBuilder: (context, index) {
-                      final sermon = sermons[index];
-                      return GestureDetector(
-                        onTap: () => goToSermon(context, sermonProvider, index),
-                        child: SermonTile(sermon: sermon),
-                      );
-                    },
+          : Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5),
+              child: Column(
+                children: [
+                  const SizedBox(height: 5),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   ),
-                ),
-              ],
+                  Expanded(
+                    child: GridView.builder(
+                      itemCount:
+                          sermons.length, // Set itemCount to avoid errors
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 10,
+                        childAspectRatio: 0.75, // Adjust ratio to fit layout
+                      ),
+                      itemBuilder: (context, index) {
+                        final sermon = sermons[index];
+                        return SermonTile(
+                          sermon: sermon,
+                          onTap: () =>
+                              goToSermon(context, sermonProvider, index),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
     );
   }

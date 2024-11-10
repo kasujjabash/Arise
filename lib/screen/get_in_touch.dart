@@ -1,5 +1,5 @@
 import 'package:arise/Theme/app_colors.dart';
-import 'package:arise/cmponets/get_in_touch_tile.dart';
+import 'package:arise/cmponets/app_tiles/get_in_touch_tile.dart';
 import 'package:flutter/material.dart';
 
 class GetInTouch extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:arise/screen/settings.dart';
 import 'package:flutter/material.dart';
-import '../Theme/app_colors.dart';
-import '../screen/my_profile.dart';
+import '../../Theme/app_colors.dart';
+import '../../screen/my_profile.dart';
 
 class MyTabBarView extends StatelessWidget {
   const MyTabBarView({super.key});

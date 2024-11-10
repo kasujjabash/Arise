@@ -1,5 +1,5 @@
 import 'package:arise/Theme/app_colors.dart';
-import 'package:arise/cmponets/drawer_tiles.dart';
+import 'package:arise/cmponets/app_tiles/drawer_tiles.dart';
 
 import 'package:flutter/material.dart';
 

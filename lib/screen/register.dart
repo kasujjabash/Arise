@@ -1,8 +1,8 @@
 import 'package:arise/Theme/app_colors.dart';
-import 'package:arise/cmponets/my_button.dart';
+import 'package:arise/cmponets/widgets/my_button.dart';
 import 'package:flutter/material.dart';
 
-import '../cmponets/my_textfield.dart';
+import '../cmponets/widgets/my_textfield.dart';
 
 class Register extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();

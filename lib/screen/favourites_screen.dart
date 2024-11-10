@@ -1,10 +1,10 @@
 import 'package:arise/Theme/app_colors.dart';
-import 'package:arise/models/sermon_provider.dart'; // Import the SermonProvider
+import 'package:arise/providers/sermon_provider.dart'; // Import the SermonProvider
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../models/sermon_model.dart';
-import '../pages/sermon_page.dart';
+import '../models/sermon_module.dart';
+import 'sermon_page.dart';
 
 class FavouritesScreen extends StatelessWidget {
   const FavouritesScreen({Key? key});

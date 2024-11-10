@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../Theme/app_colors.dart';
-import '../cmponets/settings_tile.dart';
+import '../cmponets/app_tiles/settings_tile.dart';
 import 'about_our_church.dart';
 
 class Settings extends StatelessWidget {
