@@ -34,8 +34,8 @@ class BottomNavBar extends StatelessWidget {
             text: 'Devotions',
           ),
           GButton(
-            icon: FontAwesomeIcons.heart,
-            text: 'Favourates',
+            icon: FontAwesomeIcons.handHoldingHeart,
+            text: 'Giving',
           ),
         ],
       ),

@@ -1,7 +1,7 @@
 import 'package:arise/Theme/app_colors.dart';
 import 'package:arise/cmponets/app_tiles/drawer_tiles.dart';
-
 import 'package:flutter/material.dart';
+import '../screen/get_in_touch.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -22,16 +22,25 @@ class MyDrawer extends StatelessWidget {
                   onTap: () {
                     //pop the drawer
                     Navigator.pop(context);
-                    //Open display a dialog
+                    //navigate to the Get in tourch screen
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => GetInTouch()));
                   },
                 ),
 
                 //share app
-
                 DrawerTiles(
                   icondata: Icons.share,
                   drawertilename: 'Share App',
-                  onTap: () {},
+                  onTap: () {
+                    //pop the drawer
+                    Navigator.pop(context);
+                    //navigate to the sharing screen
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (context) => const ShareScreen()));
+                  },
                 ),
               ],
             ),

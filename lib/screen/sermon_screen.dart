@@ -4,8 +4,8 @@ import 'package:arise/providers/sermon_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SermonPage extends StatelessWidget {
-  const SermonPage({
+class SermonScreen extends StatelessWidget {
+  const SermonScreen({
     super.key,
   });
 

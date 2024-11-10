@@ -2,9 +2,9 @@ import 'package:arise/Theme/app_colors.dart';
 import 'package:arise/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import '../screen/devotions_screens.dart';
+import '../screen/give_screen.dart';
 import 'my_bottom_navbar.dart';
-import '../screen/all_sermon_screen.dart';
-import '../screen/favourites_screen.dart';
+import '../screen/all_sermons_screen.dart';
 // import '../cmponets/my_tab_bar.dart';
 
 class BottomNavigation extends StatefulWidget {
@@ -29,7 +29,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     const HomeScreen(),
     const AllSermonsScreen(),
     const DevotionsScreen(),
-    const FavouritesScreen(),
+    const GiveScreen(),
   ];
 
   @override

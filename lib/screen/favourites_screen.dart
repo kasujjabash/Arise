@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../models/sermon_module.dart';
-import 'sermon_page.dart';
+import 'sermon_screen.dart';
 
 class FavouritesScreen extends StatelessWidget {
   const FavouritesScreen({Key? key});
@@ -47,7 +47,7 @@ class FavouritesScreen extends StatelessWidget {
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const SermonPage(),
+                          builder: (context) => const SermonScreen(),
                         ),
                       ),
                       child: ListTile(

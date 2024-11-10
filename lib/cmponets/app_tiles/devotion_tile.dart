@@ -1,9 +1,12 @@
 import 'package:arise/Theme/app_colors.dart';
+import 'package:arise/models/devotion_module.dart';
 import 'package:flutter/material.dart';
 
 class DevotionTile extends StatelessWidget {
+  final DevotionModule devotionModule;
   final Function()? onTap;
-  const DevotionTile({super.key, required this.onTap});
+  const DevotionTile(
+      {super.key, required this.onTap, required this.devotionModule});
 
   @override
   Widget build(BuildContext context) {
@@ -21,43 +24,47 @@ class DevotionTile extends StatelessWidget {
             children: [
               // Image
               Image.asset(
-                'assets/images/prayer_2x.jpg',
+                'assets/images/video_thumbnail.jpg',
                 height: 100,
               ),
               // Expanded content
-              const Expanded(
+              Expanded(
                 child: Padding(
-                  padding: EdgeInsets.only(left: 10.0),
+                  padding: const EdgeInsets.only(left: 10.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // Devotion title
                       Text(
-                        'Jesus Is All You Need',
-                        style: TextStyle(
+                        devotionModule.devotionTitle,
+                        style: const TextStyle(
                           color: AppColors.accentColor,
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
                       ),
                       // Scripture
                       Padding(
-                        padding: EdgeInsets.symmetric(vertical: 5),
+                        padding: const EdgeInsets.symmetric(vertical: 5),
                         child: Text(
-                          '2 Corinthians 9:15: Thanks be unto God for his unspeakable gift.',
-                          style: TextStyle(
+                          devotionModule.devotionScripture,
+                          style: const TextStyle(
                             color: AppColors.accentColor,
                             fontSize: 15,
                           ),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       //Date
                       Text(
-                        'Sat, 12th Nov 2024',
-                        style: TextStyle(
+                        devotionModule.dateOfCreation,
+                        style: const TextStyle(
                           color: AppColors.secondaryColor,
                           fontSize: 18,
                         ),

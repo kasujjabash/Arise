@@ -2,8 +2,10 @@ import 'package:arise/Theme/app_colors.dart';
 import 'package:arise/cmponets/app_tiles/sermons_tile.dart';
 import 'package:arise/models/sermon_module.dart';
 import 'package:arise/providers/sermon_provider.dart';
-import 'package:arise/screen/sermon_page.dart';
+import 'package:arise/screen/favourites_screen.dart';
+import 'package:arise/screen/sermon_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
 class AllSermonsScreen extends StatelessWidget {
@@ -17,7 +19,7 @@ class AllSermonsScreen extends StatelessWidget {
     // Navigate to the sermon page
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const SermonPage()),
+      MaterialPageRoute(builder: (context) => const SermonScreen()),
     );
   }
 
@@ -32,7 +34,7 @@ class AllSermonsScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.background,
         foregroundColor: Colors.white,
-        centerTitle: true,
+        // centerTitle: true,
         title: const Text(
           'All Sermons',
           style: TextStyle(
@@ -41,6 +43,23 @@ class AllSermonsScreen extends StatelessWidget {
             fontSize: 20,
           ),
         ),
+        //favorites
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: GestureDetector(
+                onTap: () {
+                  //Navigate to the Favourites screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const FavouritesScreen(),
+                    ),
+                  );
+                },
+                child: const Icon(FontAwesomeIcons.heart)),
+          ),
+        ],
       ),
       body: sermons.isEmpty
           ? const Center(

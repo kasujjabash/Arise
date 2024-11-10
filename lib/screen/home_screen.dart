@@ -1,16 +1,16 @@
 import 'package:arise/Theme/app_colors.dart';
 import 'package:arise/cmponets/widgets/my_banner.dart';
-import 'package:arise/cmponets/widgets/my_drawer.dart';
+import 'package:arise/navigations/my_drawer.dart';
 import 'package:arise/models/sermon_module.dart';
 import 'package:arise/providers/sermon_provider.dart';
 import 'package:arise/providers/video_provider.dart';
-import 'package:arise/screen/sermon_page.dart';
+import 'package:arise/screen/sermon_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../cmponets/app_tiles/video_tile.dart';
 import '../cmponets/widgets/my_tab_bar.dart';
 import '../cmponets/app_tiles/sermons_tile.dart';
-import 'all_sermon_screen.dart';
+import 'all_sermons_screen.dart';
 import 'video_details.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const SermonPage(),
+        builder: (context) => const SermonScreen(),
       ),
     );
   }
