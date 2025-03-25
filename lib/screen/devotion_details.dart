@@ -1,7 +1,6 @@
 import 'package:arise/Theme/app_colors.dart';
 import 'package:arise/models/devotion_module.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DevotionDetails extends StatelessWidget {
@@ -48,7 +47,7 @@ class DevotionDetails extends StatelessWidget {
             ),
 
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 18),
+              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 18),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

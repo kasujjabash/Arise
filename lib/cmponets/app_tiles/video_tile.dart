@@ -21,6 +21,7 @@ class VideoTile extends StatelessWidget {
           children: [
             Container(
               height: 200,
+              // width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.all(Radius.circular(10)),
                 image: DecorationImage(

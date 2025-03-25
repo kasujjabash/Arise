@@ -7,7 +7,7 @@ import '../models/sermon_module.dart';
 import 'sermon_screen.dart';
 
 class FavouritesScreen extends StatelessWidget {
-  const FavouritesScreen({Key? key});
+  const FavouritesScreen({super.key,});
 
   @override
   Widget build(BuildContext context) {

@@ -2,8 +2,6 @@ import 'package:arise/Theme/app_colors.dart';
 import 'package:arise/navigations/bottom_navidation.dart';
 // import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-
-import '../cmponets/app_tiles/get_in_touch_tile.dart';
 import '../cmponets/widgets/my_button.dart';
 
 class IntroScreen extends StatelessWidget {

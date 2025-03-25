@@ -47,7 +47,7 @@ class MyTabBarView extends StatelessWidget {
                 ]),
           ),
           body:  TabBarView(
-            children: [MyProfile(), Settings()],
+            children: [const MyProfile(), Settings()],
           )),
     );
   }

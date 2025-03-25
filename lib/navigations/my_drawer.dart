@@ -24,7 +24,7 @@ class MyDrawer extends StatelessWidget {
                     Navigator.pop(context);
                     //navigate to the Get in tourch screen
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => GetInTouch()));
+                        MaterialPageRoute(builder: (context) => const GetInTouch()));
                   },
                 ),
 

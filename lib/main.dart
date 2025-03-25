@@ -1,10 +1,8 @@
 import 'package:arise/providers/devotion_provider.dart';
 import 'package:arise/providers/sermon_provider.dart';
 import 'package:arise/screen/intro_screen.dart';
-import 'package:arise/screen/video_details.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'navigations/bottom_navidation.dart';
 import 'providers/video_provider.dart';
 
